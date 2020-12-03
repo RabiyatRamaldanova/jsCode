@@ -1,6 +1,6 @@
 //Вводим число (0-999), получаем строку с прописью числа.
-//let number = Math.round(Math.random()*1000);
-let number = 90;
+let number = Math.round(Math.random()*1000);
+//let number = 90;
 let numberString = number.toString();
 const massiv = [];
 for (let i = 0; i < numberString.length; i++) {
