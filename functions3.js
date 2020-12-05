@@ -1,31 +1,57 @@
 // Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число.
-let number = "пятьсот пять";
+let number = "шестьсот девять";
 const massiv = [];
 numberString = number.split(" ")
+
 //console.log(numberString[0]);
+
 for (let i = 0; i < numberString.length; i++) {
     massiv.push(numberString[i]);
 }
  console.log(number);
+
+
  if (massiv.length == 3) {
-     console.log(checkFirstDigit(0) + "" +  checkSecondDigit(1) + "" +  checkThirdDigit());
- } else if (massiv.length == 2) {
+     console.log(checkFirstDigit(0).toString() +  checkSecondDigit(1).toString() +  checkThirdDigit().toString());
+ }
+ 
+ else if (massiv.length == 2) {
      if (massiv[0].includes("ста") || massiv[0].includes("сот") || massiv[0].includes("сто")) {
          if (massiv[1] == "десять" || massiv[1].includes("надцать")){
              console.log(checkFirstDigit(0).toString() + checkSecondDigit2(1).toString());
-         } else (console.log(checkSecondDigit3(0) + "" + checkThirdDigit()));
-     } else (console.log(checkSecondDigit(0) + "" + checkThirdDigit()))
- } else if (massiv.length == 1) {
+         } 
+         
+         else if (massiv[1] == "один" || massiv[1] == "два" ||massiv[1] == "три" ||massiv[1] == "четыре" ||massiv[1] == "пять" ||massiv[1] == "шесть" ||massiv[1] == "семь" || massiv[1] == "восемь" ||massiv[1] == "девять"){
+             console.log(checkFirstDigit3(0).toString() + checkThirdDigit().toString());
+            }
+
+        else {
+            console.log(checkFirstDigit(0).toString() + checkSecondDigit3(1).toString());
+        }
+     }
+     
+     else (console.log(checkSecondDigit(0).toString() + checkThirdDigit().toString()))
+ }
+ 
+ else if (massiv.length == 1) {
      if (massiv[0].includes("надцать") || massiv[0] == "десять" ) {
-         console.log(checkSecondDigit2(0) + "");
-     } else if (massiv[0].includes("ста") || massiv[0].includes("сот") || massiv[0] == "сто") {
-         console.log(checkFirstDigit2(0) + "");
-     } else if (massiv[0] == "двадцать" || massiv[0] == "тридцать" || massiv[0] == "сорок" || massiv[0] == "пятьдесят" || massiv[0] == "шестьдесят" || massiv[0] == "семьдесят" || massiv[0] == "восемдесять" || massiv[0] == "девяносто") {
-         console.log (checkSecondDigit3(0) + "");
-     } else {
-         console.log(checkThirdDigit() + "");
+         console.log(checkSecondDigit2(0).toString());
+     } 
+     
+     else if (massiv[0].includes("ста") || massiv[0].includes("сот") || massiv[0] == "сто") {
+         console.log(checkFirstDigit2(0).toString());
+     }
+     
+     else if (massiv[0] == "двадцать" || massiv[0] == "тридцать" || massiv[0] == "сорок" || massiv[0] == "пятьдесят" || massiv[0] == "шестьдесят" || massiv[0] == "семьдесят" || massiv[0] == "восемдесять" || massiv[0] == "девяносто") {
+         console.log (checkSecondDigit3(0).toString());
+     }
+     
+     else {
+         console.log(checkThirdDigit().toString());
      }
  }
+
+
  function checkFirstDigit(i){
      switch(massiv[i]){
          case "сто":
@@ -48,6 +74,8 @@ for (let i = 0; i < numberString.length; i++) {
              return 9
      }
  }
+
+
  function checkFirstDigit2(i){
     switch(massiv[i]){
         case "сто":
@@ -70,6 +98,31 @@ for (let i = 0; i < numberString.length; i++) {
             return 900
     }
 }
+
+function checkFirstDigit3(i){
+    switch(massiv[i]){
+        case "сто":
+            return 10
+        case "двести":
+            return 20
+        case "триста":
+            return 30
+        case "четыреста":
+            return 40
+        case "пятьсот":
+            return 50
+        case "шестьсот":
+            return 60
+        case "семьсот":
+            return  70      
+        case "восемьсот":
+            return  80      
+        case "девятьсот":
+            return 90
+    }
+}
+
+
  function checkSecondDigit(i){
     switch(massiv[i]){
         case "двадцать":
@@ -84,13 +137,15 @@ for (let i = 0; i < numberString.length; i++) {
             return 6
         case "семьдесят":
             return  7        
-        case "восемьдесять":
+        case "восемьдесят":
             return  8          
         case "девяносто":
             return 9
 
     }
  }
+
+
  function checkSecondDigit2(i){
     switch(massiv[i]) {
         case "десять":
@@ -116,6 +171,8 @@ for (let i = 0; i < numberString.length; i++) {
 
     }
  }
+
+
  function checkSecondDigit3(i){
     switch(massiv[i]){
         case "двадцать":
@@ -130,13 +187,15 @@ for (let i = 0; i < numberString.length; i++) {
             return 60
         case "семьдесят":
             return  70        
-        case "восемьдесять":
+        case "восемьдесят":
             return  80          
         case "девяносто":
             return 90
 
     }
  }
+
+
  function checkThirdDigit() {
      switch(massiv[massiv.length-1]) {
          case "нуль":

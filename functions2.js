@@ -1,28 +1,39 @@
 //Вводим число (0-999), получаем строку с прописью числа.
 let number = Math.round(Math.random()*1000);
-//let number = 90;
+//let number = 923;
 let numberString = number.toString();
 const massiv = [];
+
 for (let i = 0; i < numberString.length; i++) {
     massiv.push(numberString[i]);
 }
+
 console.log(number);
+
+
 if(massiv.length === 3){
     if(massiv[1] === "1"){
         console.log(checkFirstDigit() + " " + checkSecondDigitv2());
         
     }
-    else if(massiv[1] !== "1"){
+    else if(massiv[1] !== "1" && massiv[massiv.length-1] != "0"){
         console.log(checkFirstDigit() + " " + checkSecondDigit(1) + " " + checkThirdDigit())
+    }
+    else if(massiv[1] != "1" && massiv[massiv.length-1] == "0") {
+        console.log(checkFirstDigit() + " " + checkSecondDigit(1))
     }
 
 }
 if(massiv.length == 2){
     if (massiv[0] == "1") {
         console.log(checkSecondDigitv2());
-    }else if (massiv[massiv.length -1] == "0"){
+    }
+    
+    else if (massiv[massiv.length -1] == "0"){
         console.log(checkSecondDigit(0));
-    } else {
+    } 
+    
+    else {
         console.log(checkSecondDigit(0) + " " + checkThirdDigit());
     }
 
