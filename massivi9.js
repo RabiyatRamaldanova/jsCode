@@ -14,17 +14,17 @@ console.log(`отсортированный массив`)
 // massiv.sort(functionsort)
 
 
-
-// for (let j = 0; j < massiv.length; j++){
-//         for(let i = massiv.length -1; i > j; i --){
-//     let k;
-//     if (massiv[i] > massiv[j]) {
-//         k = massiv[i];
-//         massiv[i] = massiv[j];
-//         massiv[j] = k;
-//     }
-// }
-// }
-// for(let i = 0; i < massiv.length; i++) {
-//     console.log(massiv[i]);
-// }
+// Bubble
+for (let j = 0; j < massiv.length; j++){
+        for(let i = massiv.length -1; i > j; i --){
+    let k;
+    if (massiv[i] > massiv[j]) {
+        k = massiv[i];
+        massiv[i] = massiv[j];
+        massiv[j] = k;
+    }
+}
+}
+for(let i = 0; i < massiv.length; i++) {
+    console.log(massiv[i]);
+}
